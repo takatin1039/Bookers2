@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'homes#index'
   get 'home/about', to: 'homes#about'
   resources :users, only: [:show, :edit, :update, :index]
-  resources :books, only: [:create, :index, :show, :edit, :update, :destroy]
+  resources :books, only: [:create, :index, :show, :edit, :update, :destroy] do
+  	resource :favorites, only: [:create, :destroy]
+  	resource :book_comments, only: [:create, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
