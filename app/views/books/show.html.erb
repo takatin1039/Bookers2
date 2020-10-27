@@ -47,6 +47,7 @@
     					<% end %>
     				</td>
     			</tr>
+                <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
     		</tbody>
     	</table>
         <!--コメント-->
